@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Ike</string>
+    <string name="flightDetail">LAS - LAX October 1</string>
+    <string name="flightType">1 passenger,economy</string>
+    <string name="flightType_list">List of flightType</string>
+    <string name="back_arrow">back</string>
+    <string name="select_calendar">calender</string>
+    <string name="flight_takeoff">flightTakeOff</string>
+    <string name="person">person</string>
 </resources>

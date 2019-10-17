@@ -26,7 +26,7 @@ public class FlightSearchActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flight_search_recycler);
 
-        flightSearch = (Button)findViewById(R.id.button);
+        flightSearch = findViewById(R.id.button);
         flightSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,14 +39,14 @@ public class FlightSearchActivity extends BaseActivity {
 
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.flightlist);
+        recyclerView = findViewById(R.id.flightlist);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         flightSearches = new ArrayList<>();
 
        flightSearches.add(new FlightSearch(1,"Los Angeles","Las Vegas",R.drawable.ic_place_black_24dp,R.drawable.ic_place_black_24dp));
-       flightSearches.add(new FlightSearch(1,"Add a return Flight","October 1,2019,Tuesday",R.drawable.ic_date_range_black_24dp,R.drawable.ic_unfold_more_black_24dp));
+       flightSearches.add(new FlightSearch(1,"Add a return Flight","October 1,2019,Tuesday",R.drawable.ic_unfold_more_black_24dp,R.drawable.ic_date_range_black_24dp));
 
 
         FlightSearchAdapter adapter = new FlightSearchAdapter(this, flightSearches);

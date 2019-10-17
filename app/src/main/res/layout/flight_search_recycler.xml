@@ -38,15 +38,17 @@
                 android:layout_gravity="start"
 
 
-                app:srcCompat="@drawable/ic_place_black_24dp" />
+                app:srcCompat="@drawable/ic_group_black_24dp"
+                android:contentDescription="@string/person" />
 
             <TextView
                 android:id="@+id/city1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="1 passenger,economy"
+                android:text="@string/flightType"
                 android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:textSize="14sp"
                 android:textStyle="normal"
                 android:typeface="serif" />
@@ -57,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="end"
-                app:srcCompat="@drawable/ic_unfold_more_black_24dp" />
+                app:srcCompat="@drawable/ic_unfold_more_black_24dp"
+                android:contentDescription="@string/flightType_list" />
 
         </LinearLayout>
 

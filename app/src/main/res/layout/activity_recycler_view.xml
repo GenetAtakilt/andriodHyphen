@@ -7,7 +7,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_height="50dp"
         android:background="@color/white">
 
         <LinearLayout
@@ -21,14 +21,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                android:contentDescription="@string/back_arrow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="LAS - LAX  October  1 "
+                android:text="@string/flightDetail"
                 android:typeface="sans"
                 android:textStyle="bold"
                 android:textAlignment="center" />
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 app:srcCompat="@drawable/ic_date_range_black_24dp"
-                />
+                android:contentDescription="@string/select_calendar" />
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -47,6 +48,5 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>
