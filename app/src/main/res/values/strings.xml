@@ -7,4 +7,5 @@
     <string name="select_calendar">calender</string>
     <string name="flight_takeoff">flightTakeOff</string>
     <string name="person">person</string>
+    <string name="title_activity_menu">Menu</string>
 </resources>

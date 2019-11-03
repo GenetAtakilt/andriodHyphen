@@ -10,14 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".FlightSearchActivity">
+
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Menu"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
-
+        <activity android:name=".hotel_detail"/>
+        <activity android:name=".HotelFilter"/>
+        <activity android:name=".Moving"/>
+        <activity android:name=".realestate_detail"/>
 
     </application>
 

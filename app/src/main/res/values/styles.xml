@@ -18,17 +18,20 @@
         <item name="android:typeface">sans</item>
 
 
-
     </style>
 
     <style name="searchButton.flightdetial">
 
-        <item name="android:text"> Flight Detail</item>
+        <item name="android:text">Flight Detail</item>
 
     </style>
 
     <style name="searchButton.flightSearch">
         <item name="android:text">Flight Search</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
