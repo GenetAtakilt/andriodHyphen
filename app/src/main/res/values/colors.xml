@@ -6,7 +6,7 @@
     <color name="white_color">@color/white</color>
     <color name="white">#FFFFFF</color>
     <color name="Dark">@color/lightDark </color>
-    <color name="lightDark">#C0C0C0</color>
+    <color name="lightDark">#dcdcdc</color>
     <color name="blackcolor">@color/black</color>
     <color name="black">#000000</color>
 </resources>

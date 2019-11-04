@@ -9,13 +9,13 @@
     tools:context=".Menu"
     android:orientation="vertical"
     tools:showIn="@layout/activity_menu"
-    android:background="#C0C0C0">
+    android:background="#e7e7e7">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/menues"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         app:layout_constraintBottom_toTopOf="@+id/bottonnav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -43,11 +43,12 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottonnav"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation">
+        app:menu="@menu/navigation"
+        android:background="@color/white">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
