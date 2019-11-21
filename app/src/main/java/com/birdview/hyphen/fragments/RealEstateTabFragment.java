@@ -18,18 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 
-import com.birdview.hyphen.MainActivity;
 import com.birdview.hyphen.R;
 import com.birdview.hyphen.adapters.LocationRecyclerViewAdapter;
 import com.birdview.hyphen.models.SingleRecyclerViewLocation;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
-import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
-/*import com.mapbox.mapboxsdk.maps.MapboxMapOptions;*/
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
@@ -43,7 +40,6 @@ import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
-/*import com.mapbox.mapboxsdk.utils.MapFragmentUtils;*/
 
 public class RealEstateTabFragment extends Fragment {
 
@@ -54,8 +50,7 @@ public class RealEstateTabFragment extends Fragment {
     private static final String SOURCE_ID = "SOURCE_ID";
     private static final String LAYER_ID = "LAYER_ID";
 
-    private RecyclerView reRecyclerView;
-    private LocationRecyclerViewAdapter locationRecyclerViewAdapter;
+    private MapboxMap mapboxMap;
     private MapView mapView;
     private FeatureCollection featureCollection;
 
@@ -68,7 +63,6 @@ public class RealEstateTabFragment extends Fragment {
             new LatLng(-34.590548, -58.38256609999996),
             new LatLng(-34.5982127, -58.38110440000003)
     };
-    private MapboxMap mapboxMap;
 
 /*    public static RealEstateTabFragment newInstance(Context context, int position) {
         RealEstateTabFragment mapFragment = new RealEstateTabFragment();
@@ -85,15 +79,6 @@ public class RealEstateTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Context context = inflater.getContext();
         View view = inflater.inflate(R.layout.fragment_tab_real_estate, container, false);
-        /*reRecyclerView = view.findViewById(R.id.rv_on_top_of_map);
-
-        final LinearLayoutManager linearLayoutManager =
-                new LinearLayoutManager(getActivity());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        reRecyclerView.setLayoutManager(linearLayoutManager);
-        locationRecyclerViewAdapter =
-                new LocationRecyclerViewAdapter(createRecyclerViewLocations(), mapboxMap);
-        reRecyclerView.setAdapter(locationRecyclerViewAdapter);*/
         return view;
 
     }
@@ -106,15 +91,16 @@ public class RealEstateTabFragment extends Fragment {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
+                RealEstateTabFragment.this.mapboxMap = mapboxMap;
                 mapboxMap.setStyle(
                         Style.MAPBOX_STREETS,
                         new Style.OnStyleLoaded(){
 
                             @Override
                             public void onStyleLoaded(@NonNull Style style) {
+                                initRecyclerView();
                                 initFeatureCollection();
                                 initMarkerIcons(style);
-                                initRecyclerView();
                                 Toast.makeText(getContext(), R.string.toast_instruction, Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -135,8 +121,8 @@ public class RealEstateTabFragment extends Fragment {
     }
 
     private void initRecyclerView() {
-        reRecyclerView = getActivity().findViewById(R.id.rv_on_top_of_map);
-        LocationRecyclerViewAdapter locationAdapter =
+        RecyclerView reRecyclerView = getActivity().findViewById(R.id.rv_on_top_of_map);
+        final LocationRecyclerViewAdapter locationAdapter =
                 new LocationRecyclerViewAdapter(createRecyclerViewLocations(), mapboxMap);
         reRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.HORIZONTAL, false));

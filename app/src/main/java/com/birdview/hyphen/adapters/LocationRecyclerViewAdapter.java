@@ -1,5 +1,6 @@
 package com.birdview.hyphen.adapters;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,10 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.birdview.hyphen.MainActivity;
+
 import com.birdview.hyphen.R;
 import com.birdview.hyphen.models.SingleRecyclerViewLocation;
+
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -22,11 +24,11 @@ public class LocationRecyclerViewAdapter extends
         RecyclerView.Adapter<LocationRecyclerViewAdapter.MyViewHolder> {
 
     private List<SingleRecyclerViewLocation> locationList;
-    private MapboxMap map;
+    private MapboxMap mapboxMap;
 
     public LocationRecyclerViewAdapter(List<SingleRecyclerViewLocation> locationList, MapboxMap mapBoxMap) {
         this.locationList = locationList;
-        this.map = mapBoxMap;
+        this.mapboxMap = mapBoxMap;
     }
 
     @Override
@@ -41,6 +43,8 @@ public class LocationRecyclerViewAdapter extends
         SingleRecyclerViewLocation singleRecyclerViewLocation = locationList.get(position);
         holder.name.setText(singleRecyclerViewLocation.getName());
         holder.numOfBeds.setText(singleRecyclerViewLocation.getBedInfo());
+
+
         holder.setClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -48,9 +52,9 @@ public class LocationRecyclerViewAdapter extends
                 CameraPosition newCameraPosition = new CameraPosition.Builder()
                         .target(selectedLocationLatLng)
                         .build();
-                // TODO Fix NullPointerException
-                map.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
-            }
+                 mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
+
+                }
         });
     }
 
@@ -78,11 +82,12 @@ public class LocationRecyclerViewAdapter extends
         }
 
         @Override
-        public void onClick(View view) {
+        public void onClick(View view ) {
             clickListener.onClick(view, getLayoutPosition());
         }
     }
-    public interface ItemClickListener {
+    public  interface ItemClickListener {
+
         void onClick(View view, int position);
     }
 }
