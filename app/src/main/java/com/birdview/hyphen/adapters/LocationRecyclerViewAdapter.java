@@ -1,6 +1,7 @@
 package com.birdview.hyphen.adapters;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.birdview.hyphen.R;
 import com.birdview.hyphen.models.SingleRecyclerViewLocation;
+
 
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
@@ -39,22 +41,19 @@ public class LocationRecyclerViewAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder card, int position) {
         SingleRecyclerViewLocation singleRecyclerViewLocation = locationList.get(position);
-        holder.name.setText(singleRecyclerViewLocation.getName());
-        holder.numOfBeds.setText(singleRecyclerViewLocation.getBedInfo());
-
-
-        holder.setClickListener(new ItemClickListener() {
+        card.name.setText(singleRecyclerViewLocation.getName());
+        card.numOfBeds.setText(singleRecyclerViewLocation.getBedInfo());
+        card.setClickListener(new ItemClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onItemClick(View view, int position) {
                 LatLng selectedLocationLatLng = locationList.get(position).getLocationCoordinates();
                 CameraPosition newCameraPosition = new CameraPosition.Builder()
                         .target(selectedLocationLatLng)
                         .build();
-                 mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
-
-                }
+                mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(newCameraPosition));
+            }
         });
     }
 
@@ -63,32 +62,32 @@ public class LocationRecyclerViewAdapter extends
         return locationList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name;
         TextView numOfBeds;
         CardView singleCard;
         ItemClickListener clickListener;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(final View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.location_title_tv);
             numOfBeds = itemView.findViewById(R.id.location_num_of_beds_tv);
             singleCard = itemView.findViewById(R.id.single_location_cardview);
             singleCard.setOnClickListener(this);
         }
-
         public void setClickListener(ItemClickListener itemClickListener) {
             this.clickListener = itemClickListener;
         }
 
+
         @Override
         public void onClick(View view ) {
-            clickListener.onClick(view, getLayoutPosition());
+            clickListener.onItemClick(view, getLayoutPosition());
         }
     }
     public  interface ItemClickListener {
 
-        void onClick(View view, int position);
+        void onItemClick(View view, int position);
     }
 }
 

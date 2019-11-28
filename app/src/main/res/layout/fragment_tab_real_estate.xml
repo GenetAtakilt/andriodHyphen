@@ -10,27 +10,27 @@
         android:id="@+id/re_mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        mapbox:mapbox_cameraTargetLat="-34.598172"
-        mapbox:mapbox_cameraTargetLng="-58.374867"
-        mapbox:mapbox_cameraZoom="15" />
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        mapbox:mapbox_cameraTargetLat="39.95"
+        mapbox:mapbox_cameraTargetLng="-83"
+        mapbox:mapbox_cameraTilt="48"
+        mapbox:mapbox_cameraZoom="12"
+        mapbox:mapbox_cameraZoomMin="10"
+        mapbox:mapbox_uiAttribution="false"/>
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_on_top_of_map"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:reverseLayout="true"/>
 
-    <TextView
-        android:id="@+id/real_estate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/tab_real_estate_title"
-        android:textSize="32dp" />
 
 
 </FrameLayout>

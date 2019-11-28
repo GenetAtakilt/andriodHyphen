@@ -24,12 +24,5 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:reverseLayout="true"/>
 
-    <TextView
-        android:id="@+id/hotels"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tab_hotels_title"
-        android:layout_gravity="center_horizontal"
-        android:textSize="32dp"/>
 
 </FrameLayout>

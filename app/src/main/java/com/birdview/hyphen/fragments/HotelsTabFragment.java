@@ -78,7 +78,6 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
     Context context = inflater.getContext();
     View view = inflater.inflate(R.layout.fragment_tab_hotels, container, false);
     return view;
-
 }
 
     @Override
