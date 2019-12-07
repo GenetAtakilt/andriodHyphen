@@ -1,6 +1,7 @@
-package com.birdview.ike.framework;
+package com.birdview.ike.main.home.flight.flightDetail;
 
 public class FlightData {
+
     private int id;
     private String price;
     private String place;
@@ -64,4 +65,5 @@ public class FlightData {
     public int getImage() {
         return image;
     }
+
 }

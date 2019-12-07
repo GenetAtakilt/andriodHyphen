@@ -1,4 +1,4 @@
-package com.birdview.ike.framework;
+package com.birdview.ike.main.home.flight.flightDetail;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+
+import com.birdview.ike.framework.R;
 
 import java.util.List;
 
@@ -26,24 +29,22 @@ public class FlightDataAdapter extends RecyclerView.Adapter<FlightDataAdapter.Fl
     @Override
     public FlightDataViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.activity_card_view,null);
+        View view = inflater.inflate(R.layout.flight_detail_card,null);
         return new FlightDataViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FlightDataViewHolder holder, int position) {
-       FlightData flightData = flightDataList.get(position);
-       holder.price.setText((String.valueOf (flightData.getPrice())));
-       holder.place.setText(flightData.getPlace());
-       holder.duration.setText(flightData.getDuration());
-       holder.stops.setText(flightData.getStops());
-       holder.range.setText(flightData.getRange());
-       holder.time.setText(flightData.getTime());
-       holder.type.setText(flightData.getType());
-       holder.image.setImageResource(flightData.getImage());
 
-
-
+        FlightData flightData = flightDataList.get(position);
+        holder.price.setText((String.valueOf (flightData.getPrice())));
+        holder.place.setText(flightData.getPlace());
+        holder.duration.setText(flightData.getDuration());
+        holder.stops.setText(flightData.getStops());
+        holder.range.setText(flightData.getRange());
+        holder.time.setText(flightData.getTime());
+        holder.type.setText(flightData.getType());
+        holder.image.setImageResource(flightData.getImage());
     }
 
     @Override
@@ -51,8 +52,10 @@ public class FlightDataAdapter extends RecyclerView.Adapter<FlightDataAdapter.Fl
         return flightDataList.size();
     }
 
+
     class FlightDataViewHolder extends RecyclerView.ViewHolder
     {
+
         TextView price, place,duration,stops,range,time,type;
         ImageView image;
 
@@ -60,15 +63,15 @@ public class FlightDataAdapter extends RecyclerView.Adapter<FlightDataAdapter.Fl
         public FlightDataViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
             price = itemView.findViewById(R.id.textViewPrice);
-           place = itemView.findViewById(R.id.textViewPlace);
+            place = itemView.findViewById(R.id.textViewPlace);
             duration = itemView.findViewById(R.id.textViewDuration);
             stops = itemView.findViewById(R.id.textViewStops);
             range = itemView.findViewById(R.id.textViewRange);
             time = itemView.findViewById(R.id.textViewTime);
             type = itemView.findViewById(R.id.textViewType);
             image = itemView.findViewById(R.id.flightimage);
+
 
         }
     }

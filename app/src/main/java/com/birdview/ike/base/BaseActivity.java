@@ -1,4 +1,4 @@
-package com.birdview.ike.framework.base;
+package com.birdview.ike.base;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -6,7 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.birdview.ike.framework.util.Util;
+import com.birdview.ike.util.Util;
 
 public class BaseActivity extends AppCompatActivity {
 

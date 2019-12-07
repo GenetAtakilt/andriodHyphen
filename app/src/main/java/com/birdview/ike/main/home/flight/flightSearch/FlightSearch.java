@@ -1,6 +1,7 @@
-package com.birdview.ike.framework;
+package com.birdview.ike.main.home.flight.flightSearch;
 
-public class FlightSearch  {
+public class FlightSearch {
+
     private int id;
 
     private String data;

@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">Ike</string>
-    <string name="flightDetail">LAS - LAX October 1</string>
-    <string name="flightType">1 passenger,economy</string>
-    <string name="flightType_list">List of flightType</string>
-    <string name="back_arrow">back</string>
-    <string name="select_calendar">calender</string>
-    <string name="flight_takeoff">flightTakeOff</string>
-    <string name="person">person</string>
-    <string name="title_activity_menu">Menu</string>
+    <string name="app_name">ike</string>
+    <string name="title_activity_main1">MainActivity1</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="home">home</string>
+    <string name="this_is_bid">this is bid</string>
+    <string name="this_is_home">this is home</string>
+    <string name="this_is_message">This is Message</string>
+    <string name="this_is_profile">This is Profile</string>
+    <string name="title_activity_main_nav">MainNavActivity</string>
 </resources>

@@ -1,34 +1,52 @@
-package com.birdview.ike.framework;
+package com.birdview.ike.main.home.flight.flightDetail;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import com.birdview.ike.framework.base.BaseActivity;
+
+import com.birdview.ike.framework.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class FightDetailFragment extends Fragment {
+
 
     RecyclerView recyclerView;
     FlightDataAdapter flightDataAdapter;
     List<FlightData> flightDataList;
 
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.flight_detail_recycler,container,false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        FlightDataAdapter flightDataAdapter = new FlightDataAdapter(getContext(),flightDataList);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(flightDataAdapter);
+        return view;
+
+
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
 
         flightDataList = new ArrayList<>();
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         flightDataList.add(new FlightData(1,"$46","LAS - LAX","Duration","Stops","6:10a - 7:28a","01h 21m","Direct",R.drawable.ic_flight_takeoff_black_24dp));
         flightDataList.add(new FlightData(1,"$46","LAS - LAX","Duration","Stops","6:10a - 7:28a","01h 21m","Direct",R.drawable.ic_flight_takeoff_black_24dp));
@@ -43,18 +61,5 @@ public class MainActivity extends BaseActivity {
         flightDataList.add(new FlightData(1,"$46","LAS - LAX","Duration","Stops","6:10a - 7:28a","01h 21m","Direct",R.drawable.ic_flight_takeoff_black_24dp));
         flightDataList.add(new FlightData(1,"$46","LAS - LAX","Duration","Stops","6:10a - 7:28a","01h 21m","Direct",R.drawable.ic_flight_takeoff_black_24dp));
         flightDataList.add(new FlightData(1,"$46","LAS - LAX","Duration","Stops","6:10a - 7:28a","01h 21m","Direct",R.drawable.ic_flight_takeoff_black_24dp));
-        FlightDataAdapter adapter = new FlightDataAdapter(this,flightDataList);
-        recyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
     }
 }

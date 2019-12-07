@@ -1,4 +1,4 @@
-package com.birdview.ike.framework.util;
+package com.birdview.ike.util;
 
 import android.util.Log;
 
