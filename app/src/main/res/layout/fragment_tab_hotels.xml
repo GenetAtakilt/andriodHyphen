@@ -13,7 +13,28 @@
         mapbox:mapbox_cameraTargetLat="-34.598172"
         mapbox:mapbox_cameraTargetLng="-58.374867"
         mapbox:mapbox_cameraZoom="15" />
-    />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/filter_layout_hotel"
+        android:layout_gravity="right"
+        android:backgroundTint="@color/colorDarkGrey"
+        android:layout_width="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_filter_list_black_24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Filter"
+            android:textSize="@dimen/body_text_size" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_on_top_of_hotel_map"

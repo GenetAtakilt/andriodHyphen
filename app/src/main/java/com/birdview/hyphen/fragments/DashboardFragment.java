@@ -49,7 +49,7 @@ public class DashboardFragment extends Fragment {
         HomeFragmentPageAdapter adapter = new HomeFragmentPageAdapter(getChildFragmentManager(), BEHAVIOR);
         adapter.addFragment(new RealEstateTabFragment(), getString(R.string.tab_real_estate_title));
         adapter.addFragment(new HotelsTabFragment(), getString(R.string.tab_hotels_title));
-        adapter.addFragment(new FlightsTabFragment(), getString(R.string.tab_flights_title));
+        adapter.addFragment(new FlightSearchFragment(), getString(R.string.tab_flights_title));
         adapter.addFragment(new MovingTabFragment(), getString(R.string.tab_moving_title));
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(adapter.getCount() - 1);

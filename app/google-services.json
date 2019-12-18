@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1066229244675",
+    "firebase_url": "https://hyphen-12006.firebaseio.com",
+    "project_id": "hyphen-12006",
+    "storage_bucket": "hyphen-12006.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066229244675:android:53820a9d06291d595eff36",
+        "android_client_info": {
+          "package_name": "com.birdview.hyphen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066229244675-k15m7b8u5sv4ab15m7gv14t7qrjgr107.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7t8lOm1pTUJHoQiCGD6PnPL4BeQgGDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066229244675-k15m7b8u5sv4ab15m7gv14t7qrjgr107.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

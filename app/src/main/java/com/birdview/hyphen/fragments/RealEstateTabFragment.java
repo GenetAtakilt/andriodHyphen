@@ -13,13 +13,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import com.birdview.hyphen.R;
-import com.birdview.hyphen.adapters.LocationRecyclerViewAdapter1;
+import com.birdview.hyphen.adapters.LocationRecyclerViewAdapter;
 import com.birdview.hyphen.models.IndividualLocation;
 import com.birdview.hyphen.utils.CustomThemeManager;
 import com.birdview.hyphen.utils.LinearLayoutManagerWithSmoothScroller;
@@ -73,7 +75,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.lineWidth;
 
-public class RealEstateTabFragment extends Fragment implements LocationRecyclerViewAdapter1.ClickListener, PermissionsListener, MapboxMap.OnMapClickListener {
+public class RealEstateTabFragment extends Fragment implements LocationRecyclerViewAdapter.ClickListener, PermissionsListener, MapboxMap.OnMapClickListener {
 
     //Camera bounded to device mock location
     private static final LatLngBounds LOCKED_MAP_CAMERA_BOUNDS = new LatLngBounds.Builder()
@@ -81,21 +83,19 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
             .include(new LatLng(39.9278, -82.8814))
             .build();
     private static final LatLng MOCK_DEVICE_LOCATION_LAT_LNG = new LatLng(40, -83);
-    private static final int MAPBOX_LOGO_OPACITY = 75;
     private static final int CAMERA_MOVEMENT_SPEED_IN_MILSECS = 1200;
     private static final float NAVIGATION_LINE_WIDTH = 9;
-    private static final float BUILDING_EXTRUSION_OPACITY = .8f;
     private static final String PROPERTY_SELECTED = "selected";
-    private static final String BUILDING_EXTRUSION_COLOR = "#c4dbed";
     private PermissionsManager permissionsManager;
     private DirectionsRoute currentRoute;
     private FeatureCollection featureCollection;
     private MapboxMap mapboxMap;
     private MapView mapView;
     private RecyclerView locationsRecyclerView;
+    private CardView filterCardView;
     private ArrayList<IndividualLocation> listOfIndividualLocations;
     private CustomThemeManager customThemeManager;
-    private LocationRecyclerViewAdapter1 styleRvAdapter;
+    private LocationRecyclerViewAdapter styleRvAdapter;
     private int chosenTheme;
     private String TAG = "RealEstateTabFragment";
 
@@ -104,6 +104,16 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_real_estate, container, false);
+        filterCardView = view.findViewById(R.id.filter_layout_re);
+        filterCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toFilterFrag();
+                Log.d(TAG, "Clicked");
+                Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+
+            }
+        });
         return view;
     }
 
@@ -121,6 +131,7 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
 
         // Initialize a list of IndividualLocation objects for future use with recyclerview
         listOfIndividualLocations = new ArrayList<>();
+
 
         // Initialize the theme that was selected in the previous activity. The blue theme is set as the backup default.
         chosenTheme = R.style.AppTheme_Neutral;
@@ -214,6 +225,14 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
             }
         });
 
+    }
+
+    private void toFilterFrag() {
+        Fragment fragment = new RealEstateFilterFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout_tab_real_estate, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 
@@ -564,7 +583,7 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
         locationsRecyclerView = getView().findViewById(R.id.rv_on_top_of_map);
         locationsRecyclerView.setHasFixedSize(true);
         locationsRecyclerView.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(getContext()));
-        styleRvAdapter = new LocationRecyclerViewAdapter1(listOfIndividualLocations,
+        styleRvAdapter = new LocationRecyclerViewAdapter(listOfIndividualLocations,
                 getApplicationContext(), this, chosenTheme);
         locationsRecyclerView.setAdapter(styleRvAdapter);
         SnapHelper snapHelper = new LinearSnapHelper();

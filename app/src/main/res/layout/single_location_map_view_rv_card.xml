@@ -50,7 +50,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/purple_circle"
+            android:src="@drawable/gray_circle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
             android:id="@+id/emoji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ice_cream_icon"
+            android:src="@drawable/house_icon"
             app:layout_constraintBottom_toBottomOf="@+id/background_circle"
             app:layout_constraintEnd_toEndOf="@+id/background_circle"
             app:layout_constraintStart_toStartOf="@+id/background_circle"

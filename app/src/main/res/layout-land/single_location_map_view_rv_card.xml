@@ -58,7 +58,7 @@
             android:id="@+id/emoji"
             android:layout_width="41dp"
             android:layout_height="43dp"
-            android:src="@drawable/ice_cream_icon"
+            android:src="@drawable/house_icon"
             app:layout_constraintBottom_toBottomOf="@+id/background_circle"
             app:layout_constraintEnd_toEndOf="@+id/background_circle"
             app:layout_constraintStart_toStartOf="@+id/guideline10"

@@ -1,32 +1,16 @@
 package com.birdview.hyphen;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.birdview.hyphen.R;
 import com.birdview.hyphen.adapters.BottomNavPagerAdapter;
-import com.birdview.hyphen.fragments.DashboardChildFragment;
-import com.birdview.hyphen.fragments.DashboardFragment;
-import com.birdview.hyphen.fragments.HomeFragment;
-import com.birdview.hyphen.fragments.NotificationFragment;
-import com.birdview.hyphen.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.mapbox.mapboxsdk.Mapbox;
 
 public class MainActivity extends AppCompatActivity {
