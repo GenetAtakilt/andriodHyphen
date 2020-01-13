@@ -610,7 +610,7 @@ public class HotelsTabFragment extends Fragment implements LocationRecyclerViewA
 
     private void toFilterFrag() {
         Fragment fragment = new HotelFilterFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout_tab_hotels, fragment);
         transaction.addToBackStack(null);
         transaction.commit();

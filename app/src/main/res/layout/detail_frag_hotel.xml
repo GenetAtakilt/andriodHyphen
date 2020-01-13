@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_hotel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_detail_hotel"
+            android:layout_width="match_parent"
+            android:layout_height="276dp"
+            android:background="@drawable/hotels" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_hotel_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_detail_hotel">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Michelangelo"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_detail_thumbs_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_thumb_up_grey_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_name" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="91%"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ic_detail_thumbs_up"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_name" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="|"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textview_detail_hotel_rating"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_name" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Times Square"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_hotel_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_detail_hotel_name">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_street_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="152 W 51st Street"
+                android:textColor="@color/colorBlack"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_city_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="New York, NY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_street_add" />
+
+            <View
+                android:id="@+id/divider_detail_hotel_add"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_city_add" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_street_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Times Square"
+                android:textColor="@color/colorAccent_gray"
+                android:typeface="serif"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_detail_hotel_add" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_hotel_amenities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_detail_tour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_detail_hotel_add">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amenities"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_detail_hotel_wifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_wifi_black_24dp"
+                app:layout_constraintEnd_toEndOf="@+id/textview_detail_hotel_amenities"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_hotel_amenities"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_hotel_amenities" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities_wifi_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Complimentary Wifi"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintStart_toEndOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_hotel_wifi" />
+
+
+            <ImageView
+                android:id="@+id/img_detail_hotel_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_tv_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_hotel_wifi" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities_tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="42” flat-screen"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_hotel_screen"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_hotel_amenities_wifi_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_hotel_screen" />
+
+
+            <ImageView
+                android:id="@+id/img_detail_hotel_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_drive_eta_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_hotel_screen" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities_parking_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Self-service parking $45/night"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_hotel_parking"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_hotel_amenities_tv_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_hotel_parking" />
+
+            <ImageView
+                android:id="@+id/img_detail_hotel_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_restaurant_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_hotel_parking" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities_restaurant_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Michelangelo Lounge serves American cuisine"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_hotel_restaurant"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_hotel_amenities_parking_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_hotel_restaurant" />
+
+            <ImageView
+                android:id="@+id/img_detail_hotel_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_local_bar_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_hotel_wifi"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_hotel_restaurant" />
+
+            <TextView
+                android:id="@+id/textview_detail_hotel_amenities_bar_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drinks served at Michelangelo Lounge"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_hotel_bar"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_hotel_amenities_restaurant_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_hotel_bar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_detail_tour"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button"
+        android:text="CONTINUE|$225"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

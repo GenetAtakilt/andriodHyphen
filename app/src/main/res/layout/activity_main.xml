@@ -24,6 +24,15 @@
             android:theme="@style/AppTheme.AppBarOverlay"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+<!--    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"
+        />-->
         <com.birdview.hyphen.utils.CustomViewPager
             android:id="@+id/view_pager_main"
             android:layout_width="match_parent"

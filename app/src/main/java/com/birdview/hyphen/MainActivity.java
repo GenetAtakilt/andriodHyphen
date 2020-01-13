@@ -1,7 +1,10 @@
 package com.birdview.hyphen;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -10,7 +13,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import com.birdview.hyphen.adapters.BottomNavPagerAdapter;
+import com.birdview.hyphen.fragments.RealEstateTabFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.mapbox.mapboxsdk.Mapbox;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,28 +47,29 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-/*    @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.snack_bar, menu);
         return super.onCreateOptionsMenu(menu);
-    }*/
+    }
 
-/*    @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_show_snack_bar:
                 showSnackBar();
+                Toast.makeText(this, "Settings", Toast.LENGTH_LONG);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
-    }*/
+    }
 
-/*    private void showSnackBar() {
+    private void showSnackBar() {
         Snackbar.make(navigation, "Some text", Snackbar.LENGTH_LONG).show();
 
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
         viewPager = findViewById(R.id.view_pager_main);
         BottomNavPagerAdapter adapter = new BottomNavPagerAdapter(getSupportFragmentManager(),0);
         viewPager.setAdapter(adapter);
@@ -88,7 +96,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 toolbar.setTitle(navigation.getMenu().getItem(0).getTitle());
+                toolbar.setTitleTextColor(getResources().getColor(R.color.colorBlack, getTheme()));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

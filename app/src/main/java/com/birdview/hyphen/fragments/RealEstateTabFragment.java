@@ -229,11 +229,13 @@ public class RealEstateTabFragment extends Fragment implements LocationRecyclerV
 
     private void toFilterFrag() {
         Fragment fragment = new RealEstateFilterFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout_tab_real_estate, fragment);
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.add(R.id.frame_layout_tab_real_estate, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 
 
     @SuppressWarnings({"MissingPermission"})

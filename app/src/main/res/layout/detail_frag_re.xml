@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_re"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_detail_re"
+            android:layout_width="match_parent"
+            android:layout_height="276dp"
+            android:background="@drawable/realestate" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_re_rent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_detail_re">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview_detail_re_rent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="$8,600/month"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider_detail_re_rent"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_re_rent"/>
+
+            <TextView
+                android:id="@+id/textview_detail_re_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="6 bd. | 3 ba | 2,386 sqft"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_detail_re_rent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_re_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_detail_re_rent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview_detail_re_street_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="1104 Greentree Ct,"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/divider_detail_re_add"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_re_street_add" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Lexington, KY"
+                android:textColor="@color/colorAccent_gray"
+                android:typeface="serif"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_detail_re_add" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_detail_re_amenities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardview_detail_re_add">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amenities"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_detail_re_cal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_date_range_black_24dp"
+                app:layout_constraintEnd_toEndOf="@+id/textview_detail_re_amenities"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_re_amenities"
+                app:layout_constraintTop_toBottomOf="@+id/textview_detail_re_amenities" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_year_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Year Built"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_re_cal"
+                app:layout_constraintStart_toEndOf="@+id/img_detail_re_cal"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_re_cal" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="2010"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/textview_detail_re_amenities_year_label"
+                app:layout_constraintStart_toEndOf="@+id/textview_detail_re_amenities_year_label"
+                app:layout_constraintTop_toTopOf="@+id/textview_detail_re_amenities_year_label" />
+
+            <ImageView
+                android:id="@+id/img_detail_re_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_home_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_re_cal"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_re_cal" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_type_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_re_home"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_re_amenities_year_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_re_home" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/textview_detail_re_amenities_type_label"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_re_amenities_year"
+                app:layout_constraintTop_toTopOf="@+id/textview_detail_re_amenities_type_label" />
+
+            <ImageView
+                android:id="@+id/img_detail_re_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_drive_eta_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/img_detail_re_cal"
+                app:layout_constraintTop_toBottomOf="@+id/img_detail_re_home" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_parking_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parking"
+                android:textColor="@color/colorBlack"
+                android:typeface="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_re_parking"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_re_amenities_year_label"
+                app:layout_constraintTop_toTopOf="@+id/img_detail_re_parking" />
+
+            <TextView
+                android:id="@+id/textview_detail_re_amenities_parking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private parking for 3 cars."
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/textview_detail_re_amenities_parking_label"
+                app:layout_constraintStart_toStartOf="@+id/textview_detail_re_amenities_year"
+                app:layout_constraintTop_toTopOf="@+id/textview_detail_re_amenities_parking_label"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_detail_tour"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button"
+        android:text="SCHEDULE A TOUR"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
